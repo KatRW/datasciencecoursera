@@ -1,0 +1,264 @@
+---
+title: "Coursera Capstone: WHO Measles Data (2011-2022) Report"
+author: "Katrina Rivers-Williams"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+```{r Shows All WHO Measles Data}
+View(WHO_Measles)
+```
+```{r Sorts the number of Measles cases by month and year and creates a new column for that month and year}
+
+mutate(WHO_Measles, Measles_2022_Jan=(ifelse(WHO_Measles$Year %in% c(2022), January,0)))
+mutate(WHO_Measles, Measles_2022_Feb=(ifelse(WHO_Measles$Year %in% c(2022), February,0)))
+mutate(WHO_Measles, Measles_2022_Mar=(ifelse(WHO_Measles$Year %in% c(2022), March,0)))
+mutate(WHO_Measles, Measles_2022_Apr=(ifelse(WHO_Measles$Year %in% c(2022), April,0)))
+mutate(WHO_Measles, Measles_2022_May=(ifelse(WHO_Measles$Year %in% c(2022), May,0)))
+mutate(WHO_Measles, Measles_2022_Jun=(ifelse(WHO_Measles$Year %in% c(2022), June,0)))
+mutate(WHO_Measles, Measles_2022_Jul=(ifelse(WHO_Measles$Year %in% c(2022), July,0)))
+mutate(WHO_Measles, Measles_2022_Aug=(ifelse(WHO_Measles$Year %in% c(2022), August,0)))
+mutate(WHO_Measles, Measles_2022_Sep=(ifelse(WHO_Measles$Year %in% c(2022), September,0)))
+mutate(WHO_Measles, Measles_2022_Oct=(ifelse(WHO_Measles$Year %in% c(2022), October,0)))
+mutate(WHO_Measles, Measles_2022_Nov=(ifelse(WHO_Measles$Year %in% c(2022), November,0)))
+mutate(WHO_Measles, Measles_2022_Dec=(ifelse(WHO_Measles$Year %in% c(2022), December,0)))
+
+
+mutate(WHO_Measles, Measles_2021_Jan=(ifelse(WHO_Measles$Year %in% c(2021), January,0)))
+mutate(WHO_Measles, Measles_2021_Feb=(ifelse(WHO_Measles$Year %in% c(2021), February,0)))
+mutate(WHO_Measles, Measles_2021_Mar=(ifelse(WHO_Measles$Year %in% c(2021), March,0)))
+mutate(WHO_Measles, Measles_2021_Apr=(ifelse(WHO_Measles$Year %in% c(2021), April,0)))
+mutate(WHO_Measles, Measles_2021_May=(ifelse(WHO_Measles$Year %in% c(2021), May,0)))
+mutate(WHO_Measles, Measles_2021_Jun=(ifelse(WHO_Measles$Year %in% c(2021), June,0)))
+mutate(WHO_Measles, Measles_2021_Jul=(ifelse(WHO_Measles$Year %in% c(2021), July,0)))
+mutate(WHO_Measles, Measles_2021_Aug=(ifelse(WHO_Measles$Year %in% c(2021), August,0)))
+mutate(WHO_Measles, Measles_2021_Sep=(ifelse(WHO_Measles$Year %in% c(2021), September,0)))
+mutate(WHO_Measles, Measles_2021_Oct=(ifelse(WHO_Measles$Year %in% c(2021), October,0)))
+mutate(WHO_Measles, Measles_2021_Nov=(ifelse(WHO_Measles$Year %in% c(2021), November,0)))
+mutate(WHO_Measles, Measles_2021_Dec=(ifelse(WHO_Measles$Year %in% c(2021), December,0)))
+
+
+mutate(WHO_Measles, Measles_2020_Jan=(ifelse(WHO_Measles$Year %in% c(2020), January,0)))
+mutate(WHO_Measles, Measles_2020_Feb=(ifelse(WHO_Measles$Year %in% c(2020), February,0)))
+mutate(WHO_Measles, Measles_2020_Mar=(ifelse(WHO_Measles$Year %in% c(2020), March,0)))
+mutate(WHO_Measles, Measles_2020_Apr=(ifelse(WHO_Measles$Year %in% c(2020), April,0)))
+mutate(WHO_Measles, Measles_2020_May=(ifelse(WHO_Measles$Year %in% c(2020), May,0)))
+mutate(WHO_Measles, Measles_2020_Jun=(ifelse(WHO_Measles$Year %in% c(2020), June,0)))
+mutate(WHO_Measles, Measles_2020_Jul=(ifelse(WHO_Measles$Year %in% c(2020), July,0)))
+mutate(WHO_Measles, Measles_2020_Aug=(ifelse(WHO_Measles$Year %in% c(2020), August,0)))
+mutate(WHO_Measles, Measles_2020_Sep=(ifelse(WHO_Measles$Year %in% c(2020), September,0)))
+mutate(WHO_Measles, Measles_2020_Oct=(ifelse(WHO_Measles$Year %in% c(2020), October,0)))
+mutate(WHO_Measles, Measles_2020_Nov=(ifelse(WHO_Measles$Year %in% c(2020), November,0)))
+mutate(WHO_Measles, Measles_2020_Dec=(ifelse(WHO_Measles$Year %in% c(2020), December,0)))
+
+
+mutate(WHO_Measles, Measles_2019_Jan=(ifelse(WHO_Measles$Year %in% c(2019), January,0)))
+mutate(WHO_Measles, Measles_2019_Feb=(ifelse(WHO_Measles$Year %in% c(2019), February,0)))
+mutate(WHO_Measles, Measles_2019_Mar=(ifelse(WHO_Measles$Year %in% c(2019), March,0)))
+mutate(WHO_Measles, Measles_2019_Apr=(ifelse(WHO_Measles$Year %in% c(2019), April,0)))
+mutate(WHO_Measles, Measles_2019_May=(ifelse(WHO_Measles$Year %in% c(2019), May,0)))
+mutate(WHO_Measles, Measles_2019_Jun=(ifelse(WHO_Measles$Year %in% c(2019), June,0)))
+mutate(WHO_Measles, Measles_2019_Jul=(ifelse(WHO_Measles$Year %in% c(2019), July,0)))
+mutate(WHO_Measles, Measles_2019_Aug=(ifelse(WHO_Measles$Year %in% c(2019), August,0)))
+mutate(WHO_Measles, Measles_2019_Sep=(ifelse(WHO_Measles$Year %in% c(2019), September,0)))
+mutate(WHO_Measles, Measles_2019_Oct=(ifelse(WHO_Measles$Year %in% c(2019), October,0)))
+mutate(WHO_Measles, Measles_2019_Nov=(ifelse(WHO_Measles$Year %in% c(2019), November,0)))
+mutate(WHO_Measles, Measles_2019_Dec=(ifelse(WHO_Measles$Year %in% c(2019), December,0)))
+
+
+mutate(WHO_Measles, Measles_2018_Jan=(ifelse(WHO_Measles$Year %in% c(2018), January,0)))
+mutate(WHO_Measles, Measles_2018_Feb=(ifelse(WHO_Measles$Year %in% c(2018), February,0)))
+mutate(WHO_Measles, Measles_2018_Mar=(ifelse(WHO_Measles$Year %in% c(2018), March,0)))
+mutate(WHO_Measles, Measles_2018_Apr=(ifelse(WHO_Measles$Year %in% c(2018), April,0)))
+mutate(WHO_Measles, Measles_2018_May=(ifelse(WHO_Measles$Year %in% c(2018), May,0)))
+mutate(WHO_Measles, Measles_2018_Jun=(ifelse(WHO_Measles$Year %in% c(2018), June,0)))
+mutate(WHO_Measles, Measles_2018_Jul=(ifelse(WHO_Measles$Year %in% c(2018), July,0)))
+mutate(WHO_Measles, Measles_2018_Aug=(ifelse(WHO_Measles$Year %in% c(2018), August,0)))
+mutate(WHO_Measles, Measles_2018_Sep=(ifelse(WHO_Measles$Year %in% c(2018), September,0)))
+mutate(WHO_Measles, Measles_2018_Oct=(ifelse(WHO_Measles$Year %in% c(2018), October,0)))
+mutate(WHO_Measles, Measles_2018_Nov=(ifelse(WHO_Measles$Year %in% c(2018), November,0)))
+mutate(WHO_Measles, Measles_2018_Dec=(ifelse(WHO_Measles$Year %in% c(2018), December,0)))
+
+
+mutate(WHO_Measles, Measles_2017_Jan=(ifelse(WHO_Measles$Year %in% c(2017), January,0)))
+mutate(WHO_Measles, Measles_2017_Feb=(ifelse(WHO_Measles$Year %in% c(2017), February,0)))
+mutate(WHO_Measles, Measles_2017_Mar=(ifelse(WHO_Measles$Year %in% c(2017), March,0)))
+mutate(WHO_Measles, Measles_2017_Apr=(ifelse(WHO_Measles$Year %in% c(2017), April,0)))
+mutate(WHO_Measles, Measles_2017_May=(ifelse(WHO_Measles$Year %in% c(2017), May,0)))
+mutate(WHO_Measles, Measles_2017_Jun=(ifelse(WHO_Measles$Year %in% c(2017), June,0)))
+mutate(WHO_Measles, Measles_2017_Jul=(ifelse(WHO_Measles$Year %in% c(2017), July,0)))
+mutate(WHO_Measles, Measles_2017_Aug=(ifelse(WHO_Measles$Year %in% c(2017), August,0)))
+mutate(WHO_Measles, Measles_2017_Sep=(ifelse(WHO_Measles$Year %in% c(2017), September,0)))
+mutate(WHO_Measles, Measles_2017_Oct=(ifelse(WHO_Measles$Year %in% c(2017), October,0)))
+mutate(WHO_Measles, Measles_2017_Nov=(ifelse(WHO_Measles$Year %in% c(2017), November,0)))
+mutate(WHO_Measles, Measles_2017_Dec=(ifelse(WHO_Measles$Year %in% c(2017), December,0)))
+
+
+mutate(WHO_Measles, Measles_2016_Jan=(ifelse(WHO_Measles$Year %in% c(2016), January,0)))
+mutate(WHO_Measles, Measles_2016_Feb=(ifelse(WHO_Measles$Year %in% c(2016), February,0)))
+mutate(WHO_Measles, Measles_2016_Mar=(ifelse(WHO_Measles$Year %in% c(2016), March,0)))
+mutate(WHO_Measles, Measles_2016_Apr=(ifelse(WHO_Measles$Year %in% c(2016), April,0)))
+mutate(WHO_Measles, Measles_2016_May=(ifelse(WHO_Measles$Year %in% c(2016), May,0)))
+mutate(WHO_Measles, Measles_2016_Jun=(ifelse(WHO_Measles$Year %in% c(2016), June,0)))
+mutate(WHO_Measles, Measles_2016_Jul=(ifelse(WHO_Measles$Year %in% c(2016), July,0)))
+mutate(WHO_Measles, Measles_2016_Aug=(ifelse(WHO_Measles$Year %in% c(2016), August,0)))
+mutate(WHO_Measles, Measles_2016_Sep=(ifelse(WHO_Measles$Year %in% c(2016), September,0)))
+mutate(WHO_Measles, Measles_2016_Oct=(ifelse(WHO_Measles$Year %in% c(2016), October,0)))
+mutate(WHO_Measles, Measles_2016_Nov=(ifelse(WHO_Measles$Year %in% c(2016), November,0)))
+mutate(WHO_Measles, Measles_2016_Dec=(ifelse(WHO_Measles$Year %in% c(2016), December,0)))
+
+
+mutate(WHO_Measles, Measles_2015_Jan=(ifelse(WHO_Measles$Year %in% c(2015), January,0)))
+mutate(WHO_Measles, Measles_2015_Feb=(ifelse(WHO_Measles$Year %in% c(2015), February,0)))
+mutate(WHO_Measles, Measles_2015_Mar=(ifelse(WHO_Measles$Year %in% c(2015), March,0)))
+mutate(WHO_Measles, Measles_2015_Apr=(ifelse(WHO_Measles$Year %in% c(2015), April,0)))
+mutate(WHO_Measles, Measles_2015_May=(ifelse(WHO_Measles$Year %in% c(2015), May,0)))
+mutate(WHO_Measles, Measles_2015_Jun=(ifelse(WHO_Measles$Year %in% c(2015), June,0)))
+mutate(WHO_Measles, Measles_2015_Jul=(ifelse(WHO_Measles$Year %in% c(2015), July,0)))
+mutate(WHO_Measles, Measles_2015_Aug=(ifelse(WHO_Measles$Year %in% c(2015), August,0)))
+mutate(WHO_Measles, Measles_2015_Sep=(ifelse(WHO_Measles$Year %in% c(2015), September,0)))
+mutate(WHO_Measles, Measles_2015_Oct=(ifelse(WHO_Measles$Year %in% c(2015), October,0)))
+mutate(WHO_Measles, Measles_2015_Nov=(ifelse(WHO_Measles$Year %in% c(2015), November,0)))
+mutate(WHO_Measles, Measles_2015_Dec=(ifelse(WHO_Measles$Year %in% c(2015), December,0)))
+
+
+mutate(WHO_Measles, Measles_2014_Jan=(ifelse(WHO_Measles$Year %in% c(2014), January,0)))
+mutate(WHO_Measles, Measles_2014_Feb=(ifelse(WHO_Measles$Year %in% c(2014), February,0)))
+mutate(WHO_Measles, Measles_2014_Mar=(ifelse(WHO_Measles$Year %in% c(2014), March,0)))
+mutate(WHO_Measles, Measles_2014_Apr=(ifelse(WHO_Measles$Year %in% c(2014), April,0)))
+mutate(WHO_Measles, Measles_2014_May=(ifelse(WHO_Measles$Year %in% c(2014), May,0)))
+mutate(WHO_Measles, Measles_2014_Jun=(ifelse(WHO_Measles$Year %in% c(2014), June,0)))
+mutate(WHO_Measles, Measles_2014_Jul=(ifelse(WHO_Measles$Year %in% c(2014), July,0)))
+mutate(WHO_Measles, Measles_2014_Aug=(ifelse(WHO_Measles$Year %in% c(2014), August,0)))
+mutate(WHO_Measles, Measles_2014_Sep=(ifelse(WHO_Measles$Year %in% c(2041), September,0)))
+mutate(WHO_Measles, Measles_2014_Oct=(ifelse(WHO_Measles$Year %in% c(2014), October,0)))
+mutate(WHO_Measles, Measles_2014_Nov=(ifelse(WHO_Measles$Year %in% c(2014), November,0)))
+mutate(WHO_Measles, Measles_2014_Dec=(ifelse(WHO_Measles$Year %in% c(2014), December,0)))
+
+
+mutate(WHO_Measles, Measles_2013_Jan=(ifelse(WHO_Measles$Year %in% c(2013), January,0)))
+mutate(WHO_Measles, Measles_2013_Feb=(ifelse(WHO_Measles$Year %in% c(2013), February,0)))
+mutate(WHO_Measles, Measles_2013_Mar=(ifelse(WHO_Measles$Year %in% c(2013), March,0)))
+mutate(WHO_Measles, Measles_2013_Apr=(ifelse(WHO_Measles$Year %in% c(2013), April,0)))
+mutate(WHO_Measles, Measles_2013_May=(ifelse(WHO_Measles$Year %in% c(2013), May,0)))
+mutate(WHO_Measles, Measles_2013_Jun=(ifelse(WHO_Measles$Year %in% c(2013), June,0)))
+mutate(WHO_Measles, Measles_2013_Jul=(ifelse(WHO_Measles$Year %in% c(2013), July,0)))
+mutate(WHO_Measles, Measles_2013_Aug=(ifelse(WHO_Measles$Year %in% c(2013), August,0)))
+mutate(WHO_Measles, Measles_2013_Sep=(ifelse(WHO_Measles$Year %in% c(2013), September,0)))
+mutate(WHO_Measles, Measles_2013_Oct=(ifelse(WHO_Measles$Year %in% c(2013), October,0)))
+mutate(WHO_Measles, Measles_2013_Nov=(ifelse(WHO_Measles$Year %in% c(2013), November,0)))
+mutate(WHO_Measles, Measles_2013_Dec=(ifelse(WHO_Measles$Year %in% c(2013), December,0)))
+
+
+mutate(WHO_Measles, Measles_2012_Jan=(ifelse(WHO_Measles$Year %in% c(2012), January,0)))
+mutate(WHO_Measles, Measles_2012_Feb=(ifelse(WHO_Measles$Year %in% c(2012), February,0)))
+mutate(WHO_Measles, Measles_2012_Mar=(ifelse(WHO_Measles$Year %in% c(2012), March,0)))
+mutate(WHO_Measles, Measles_2012_Apr=(ifelse(WHO_Measles$Year %in% c(2012), April,0)))
+mutate(WHO_Measles, Measles_2012_May=(ifelse(WHO_Measles$Year %in% c(2012), May,0)))
+mutate(WHO_Measles, Measles_2012_Jun=(ifelse(WHO_Measles$Year %in% c(2012), June,0)))
+mutate(WHO_Measles, Measles_2012_Jul=(ifelse(WHO_Measles$Year %in% c(2012), July,0)))
+mutate(WHO_Measles, Measles_2012_Aug=(ifelse(WHO_Measles$Year %in% c(2012), August,0)))
+mutate(WHO_Measles, Measles_2012_Sep=(ifelse(WHO_Measles$Year %in% c(2012), September,0)))
+mutate(WHO_Measles, Measles_2012_Oct=(ifelse(WHO_Measles$Year %in% c(2012), October,0)))
+mutate(WHO_Measles, Measles_2012_Nov=(ifelse(WHO_Measles$Year %in% c(2012), November,0)))
+mutate(WHO_Measles, Measles_2012_Dec=(ifelse(WHO_Measles$Year %in% c(2012), December,0)))
+
+
+mutate(WHO_Measles, Measles_2011_Jan=(ifelse(WHO_Measles$Year %in% c(2011), January,0)))
+mutate(WHO_Measles, Measles_2011_Feb=(ifelse(WHO_Measles$Year %in% c(2011), February,0)))
+mutate(WHO_Measles, Measles_2011_Mar=(ifelse(WHO_Measles$Year %in% c(2011), March,0)))
+mutate(WHO_Measles, Measles_2011_Apr=(ifelse(WHO_Measles$Year %in% c(2011), April,0)))
+mutate(WHO_Measles, Measles_2011_May=(ifelse(WHO_Measles$Year %in% c(2011), May,0)))
+mutate(WHO_Measles, Measles_2011_Jun=(ifelse(WHO_Measles$Year %in% c(2011), June,0)))
+mutate(WHO_Measles, Measles_2011_Jul=(ifelse(WHO_Measles$Year %in% c(2011), July,0)))
+mutate(WHO_Measles, Measles_2011_Aug=(ifelse(WHO_Measles$Year %in% c(2011), August,0)))
+mutate(WHO_Measles, Measles_2011_Sep=(ifelse(WHO_Measles$Year %in% c(2011), September,0)))
+mutate(WHO_Measles, Measles_2011_Oct=(ifelse(WHO_Measles$Year %in% c(2011), October,0)))
+mutate(WHO_Measles, Measles_2011_Nov=(ifelse(WHO_Measles$Year %in% c(2011), November,0)))
+mutate(WHO_Measles, Measles_2011_Dec=(ifelse(WHO_Measles$Year %in% c(2011), December,0)))
+```
+```{r Pivot Table: Country Codes and the Mean and Median of Measles Cases by Month (for years 2011-2022)}
+
+WHO_Measles%>% group_by(ISO3) %>% summarize(mean_values_January = mean(January),median_values_January = median(January), mean_values_February = mean(February),median_values_February = median(February), mean_values_March = mean(March), median_values_March = median(March), mean_values_April = mean(April), median_values_April = median(April), mean_values_May = mean(May), median_values_May = median(May), mean_values_June = mean(June), median_values_June = median(June), mean_values_July = mean(July), median_values_July = median(July), mean_values_August = mean(August), median_values_August = median(August),  mean_values_September = mean(September), median_values_September = median(September), mean_values_October = mean(October), median_values_November = median(November), mean_values_November = mean(November), mean_values_December = mean(December), median_values_December = median(December))
+```
+```{r Max calculated by Month}
+
+max(WHO_Measles$January,WHO_Measles$February,WHO_Measles$March,WHO_Measles$April,WHO_Measles$May, WHO_Measles$June, WHO_Measles$July, WHO_Measles$August, WHO_Measles$September, WHO_Measles$October, WHO_Measles$November, WHO_Measles$December)
+
+```
+```{r Min calculated by Month}
+
+min(WHO_Measles$January,WHO_Measles$February,WHO_Measles$March,WHO_Measles$April,WHO_Measles$May, WHO_Measles$June, WHO_Measles$July, WHO_Measles$August, WHO_Measles$September, WHO_Measles$October, WHO_Measles$November, WHO_Measles$December)
+
+```
+```{r ggplot 1: Measles Cases by Region (Determines Areas of Need and Areas to Emulate) X= Region, Y = Measles Cases (Aggregate Months)}
+
+WHO_Measles %>% pivot_longer(January:December) %>% ggplot() + geom_col(aes(x= Region, y=value, fill= name ), position = "dodge") 
+
+
+```
+```{r ggplot 2: Measles Cases by ISO3 (Country Code) (Narrows the focus by Country), X = ISO3, Y = Measles Cases (Aggregate Months)}
+
+WHO_Measles %>% pivot_longer(January:December) %>% ggplot() + geom_col(aes(x= ISO3, y=value, fill= name ), position = "dodge") + scale_x_discrete(guide = guide_axis(check.overlap = TRUE))
+  
+
+
+
+```
+```{r ggplot 3: Observing the (possible) Covid-19 "Spike", X = Years, Y = Measles Cases by Month}
+
+WHO_Measles %>% pivot_longer(January:December) %>% ggplot() + geom_col(aes(x= Year, y=value, fill= name ), position = "dodge") 
+
+
+
+```
+```
+#### Statement:
+Analysing WHO Measles Data (2011-2022) to determine areas of need (high measles cases), and areas to emulate (low measles cases),with regards to vaccination strategies. Examining the data to determine further areas of research (i.e. the suspected Covid-19 spike in 2019).
+
+#### Documentation of any Cleaning or Manipulation of Data:
+Data was downloaded from the website of the World Health Organization (https://immunizationdata.who.int/pages/incidence/MEASLES.html?CODE=Global&YEAR=), and underwent its initial cleaning in Google Sheets. In Google Sheets (https://docs.google.com/spreadsheets/d/1Md-fvKgEb9E4LWxasF08S-y1j6ZLyNhbvP_lFOM3mx8/edit?usp=sharing), empty, and duplicate, values were eliminated. In RStudio, columns were created (mutated, or combining variables), and added to the data table.
+
+#### Summary of Analysis:
+American regions have the lowest number of measles cases compared to African regions, which have the highest number of measles cases. Measles cases are highest from the months of January to April, and lowest during the months of June and July. 
+
+#### Supporting Visualizations and Key Findings:
+In reference to ggplot3, there is a noticeable increase of measles cases in 2019, this coincides with the start of the Covid-19 Pandemic. 
+
+#### High-level Insights: 
+While suggesting a vaccination strategy based on area of need may be a logical solution, utilizing the vaccination strategy of the regions with the lowest measles cases (assuming those strategies are known) may not be feasible, or even the best response. The data is clear on which regions, and countries, experience the highest occurence of measles cases; and there also seems to be a "measles season", where measles cases are highest in late winter and early spring.  
+
+#### List of additional Deliverables and Further Exploration:
+Further research is suggested on the origin of the increase of measles cases during the start of the Covid-19 pandemic (the "Covid-19 Spike"). It may be that more measles cases were discovered during that time because medical professionals were actively searching for Covid-19, and as a result had more access to patients (which resulted in more measles cases).
+
+##### Citations:
+DataMentor (n.d.). R ifelse () Function. Datamentor.io. Retrieved August 7, 2023, from https://www.datamentor.io/r-programming/ifelse-function
+
+Hartman, K. (2020, November 15). Divvy Exercise R Script. Divvy Exercise R Script-Google Docs. Retrieved August 7, 2023, from https://docs.google.com/document/d/1TTj5KNKf4BWvEORGm10oNbpwTRk1hamsWJGj6qRWpuI/edit?usp=sharing
+
+M. (2021, December 19). How to Create Pivot Tables in R? Geeksforgeeks.org. Retrieved August 7, 2023, from https://www.geeksforgeeks.org/how-to-create-pivot-tables-in-r/
+
+S. (2023, June 6). How to Use min() and max() in R. Geeksforgeeks.org. Retrieved August 7, 2023, from https://www.geeksforgeeks.org/how-to-use-min-and-max-functions-in-r/
+
+U. (2020, April 22). Make ggplot chart with more than one y value. Stackoverflow.com. Retrieved August 7, 2023, from https://stackoverflow.com/questions/61355951/make-ggplot-chart-with-more-than-one-y-value
+
+World Health Organization (n.d.). Measles reported cases and incidence. Retrieved August 7, 2023, from https://immunizationdata.who.int/pages/incidence/MEASLES.html?CODE=Global&YEAR=
+
+(2020, March 11). How To Avoid Overlapping Labels in ggplot2? Https://Datavizpyr.com/. Retrieved August 7, 2023, from https://datavizpyr.com/how-to-dodge-overlapping-text-on-x-axis-labels-in-ggplot2/
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
